@@ -9,11 +9,15 @@ decrementButton.addEventListener("click", decrement);
 function increment() {
     currentNumber++;
     currentNumberWrapper.innerHTML = currentNumber;
+    if (currentNumber >= 0) {
+        currentNumberWrapper.style.color = 'black';
+    }
 }
 
 function decrement() {
-    if (currentNumber > 0) {
-        currentNumber--;
-        currentNumberWrapper.innerHTML = currentNumber;
-    }        
+    currentNumber--;
+    if (currentNumber < 0) {
+        currentNumberWrapper.style.color = 'red';
+    }
+    currentNumberWrapper.innerHTML = currentNumber;
 }
